@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot
-  name="corn_harvester">
+  name="corn3">
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="2.058 0.0020787 0.45793"
+        xyz="0.0020787 0.45793 2.058"
         rpy="0 0 0" />
       <mass
         value="40068" />
       <inertia
-        ixx="172590"
-        ixy="321.56"
-        ixz="-1374.3"
-        iyy="302500"
-        iyz="-69.138"
-        izz="355850" />
+        ixx="302500"
+        ixy="-69.138"
+        ixz="321.56"
+        iyy="355850"
+        iyz="-1374.3"
+        izz="172590" />
     </inertial>
     <visual>
       <origin
@@ -51,7 +51,7 @@
         value="950.62" />
       <inertia
         ixx="388.87"
-        ixy="-2.1974E-09"
+        ixy="-2.1869E-09"
         ixz="0.001334"
         iyy="218.49"
         iyz="-1.5235E-09"
@@ -85,14 +85,14 @@
     name="left_front_wheel_joint0"
     type="continuous">
     <origin
-      xyz="3.4954 1.1624 2.767"
-      rpy="0 1.5708 0" />
+      xyz="2.767 -3.5054 -1.1624"
+      rpy="-1.5708 0 3.1416" />
     <parent
       link="base_link" />
     <child
       link="left_front_wheel_link0" />
     <axis
-      xyz="0 1 0" />
+      xyz="1 0 0" />
   </joint>
   <link
     name="right_front_wheel_link1">
@@ -104,7 +104,7 @@
         value="950.62" />
       <inertia
         ixx="388.87"
-        ixy="-2.1856E-09"
+        ixy="-2.1873E-09"
         ixz="0.001334"
         iyy="218.49"
         iyz="-1.5235E-09"
@@ -138,14 +138,14 @@
     name="right_front_wheel_joint1"
     type="continuous">
     <origin
-      xyz="3.4954 1.4431 -2.767"
-      rpy="0 -1.5708 0" />
+      xyz="-2.767 -3.5054 -1.4431"
+      rpy="1.5708 0 0" />
     <parent
       link="base_link" />
     <child
       link="right_front_wheel_link1" />
     <axis
-      xyz="0 1 0" />
+      xyz="1 0 0" />
   </joint>
   <link
     name="right_rear_wheel_link2">
@@ -157,7 +157,7 @@
         value="950.62" />
       <inertia
         ixx="388.87"
-        ixy="-2.1856E-09"
+        ixy="-2.1873E-09"
         ixz="0.001334"
         iyy="218.49"
         iyz="-1.5235E-09"
@@ -191,14 +191,14 @@
     name="right_rear_wheel_joint2"
     type="continuous">
     <origin
-      xyz="-2.3646 1.4431 -2.767"
-      rpy="0 -1.5708 0" />
+      xyz="-2.767 2.3546 -1.4431"
+      rpy="1.5708 0 0" />
     <parent
       link="base_link" />
     <child
       link="right_rear_wheel_link2" />
     <axis
-      xyz="0 1 0" />
+      xyz="1 0 0" />
   </joint>
   <link
     name="left_rear_wheel_link3">
@@ -210,7 +210,7 @@
         value="950.62" />
       <inertia
         ixx="388.87"
-        ixy="-2.1974E-09"
+        ixy="-2.1869E-09"
         ixz="0.001334"
         iyy="218.49"
         iyz="-1.5235E-09"
@@ -244,20 +244,20 @@
     name="left_rear_wheel_joint3"
     type="continuous">
     <origin
-      xyz="-2.3646 1.1624 2.767"
-      rpy="0 1.5708 0" />
+      xyz="2.767 2.3546 -1.1624"
+      rpy="-1.5708 0 3.1416" />
     <parent
       link="base_link" />
     <child
       link="left_rear_wheel_link3" />
     <axis
-      xyz="0 1 0" />
+      xyz="1 0 0" />
   </joint>
   <link
     name="laser_link">
     <inertial>
       <origin
-        xyz="-0.00099017 -0.21034 -0.0064028"
+        xyz="-0.00098912 -0.21034 -0.0064035"
         rpy="0 0 0" />
       <mass
         value="141.89" />
@@ -266,7 +266,7 @@
         ixy="-0.014198"
         ixz="-0.1636"
         iyy="6.8801"
-        iyz="-0.022422"
+        iyz="-0.022421"
         izz="4.3567" />
     </inertial>
     <visual>
@@ -297,8 +297,8 @@
     name="laser_joint"
     type="fixed">
     <origin
-      xyz="2.8823 -3.7226 0.005493"
-      rpy="0.0043263 0.7476 -3.1367" />
+      xyz="0.005493 -2.8923 3.7226"
+      rpy="1.5718 -0.0036179 2.3184" />
     <parent
       link="base_link" />
     <child
