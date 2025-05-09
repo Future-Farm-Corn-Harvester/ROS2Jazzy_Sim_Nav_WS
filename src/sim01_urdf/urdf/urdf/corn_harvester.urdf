@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="cornn">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.92663 1.6644 1.5105"
+        rpy="0 0 0" />
+      <mass
+        value="40025" />
+      <inertia
+        ixx="172580"
+        ixy="1386.3"
+        ixz="-321.57"
+        iyy="355830"
+        iyz="-69.141"
+        izz="302470" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_front_wheel_link0">
+    <inertial>
+      <origin
+        xyz="-0.3271 0.13034 0.020054"
+        rpy="0 0 0" />
+      <mass
+        value="950.62" />
+      <inertia
+        ixx="388.87"
+        ixy="-2.1876E-09"
+        ixz="0.001334"
+        iyy="218.49"
+        iyz="-1.5235E-09"
+        izz="218.49" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/left_front_wheel_link0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/left_front_wheel_link0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_front_wheel_joint0"
+    type="continuous">
+    <origin
+      xyz="-2.3657 -4.2754 0.033114"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_front_wheel_link0" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_front_wheel_link1">
+    <inertial>
+      <origin
+        xyz="-0.3271 -0.15034 -0.020054"
+        rpy="0 0 0" />
+      <mass
+        value="950.62" />
+      <inertia
+        ixx="388.87"
+        ixy="2.1873E-09"
+        ixz="-0.001334"
+        iyy="218.49"
+        iyz="-1.5235E-09"
+        izz="218.49" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/right_front_wheel_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/right_front_wheel_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front_wheel_joint1"
+    type="continuous">
+    <origin
+      xyz="-2.3657 1.2587 -0.24756"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_front_wheel_link1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_rear_wheel_link2">
+    <inertial>
+      <origin
+        xyz="-0.3271 -0.15034 -0.020054"
+        rpy="0 0 0" />
+      <mass
+        value="950.62" />
+      <inertia
+        ixx="388.87"
+        ixy="2.1873E-09"
+        ixz="-0.001334"
+        iyy="218.49"
+        iyz="-1.5235E-09"
+        izz="218.49" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/right_rear_wheel_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/right_rear_wheel_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_rear_wheel_joint2"
+    type="continuous">
+    <origin
+      xyz="3.4943 1.2587 -0.24756"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_rear_wheel_link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_rear_wheel_link3">
+    <inertial>
+      <origin
+        xyz="-0.3271 0.13034 0.020054"
+        rpy="0 0 0" />
+      <mass
+        value="950.62" />
+      <inertia
+        ixx="388.87"
+        ixy="-2.1876E-09"
+        ixz="0.001334"
+        iyy="218.49"
+        iyz="-1.5235E-09"
+        izz="218.49" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/left_rear_wheel_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/left_rear_wheel_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_rear_wheel_joint3"
+    type="continuous">
+    <origin
+      xyz="3.4943 -4.2754 0.033114"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_rear_wheel_link3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="laser_link">
+    <inertial>
+      <origin
+        xyz="-0.00098912 -0.22034 -0.0064035"
+        rpy="0 0 0" />
+      <mass
+        value="141.89" />
+      <inertia
+        ixx="4.3306"
+        ixy="-0.014198"
+        ixz="-0.1636"
+        iyy="6.88"
+        iyz="-0.022421"
+        izz="4.3567" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://corn_harvester/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="-1.7526 -1.5139 4.9382"
+      rpy="1.5718 -0.0036179 0.74761" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
