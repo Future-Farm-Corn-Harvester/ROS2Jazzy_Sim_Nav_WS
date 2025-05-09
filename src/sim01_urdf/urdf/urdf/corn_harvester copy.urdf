@@ -17,14 +17,14 @@
         xyz="0.0020787 0.45793 0.058"
         rpy="0 0 0" />
       <mass
-        value="10.2316767990512" />
+        value="40068" />
       <inertia
-        ixx="0.00139586884914313"
-        ixy="-1.1634425915606E-06"
-        ixz="2.08900696909113E-08"
-        iyy="0.00163816424060367"
-        iyz="1.3906877128818E-07"
-        izz="0.00212627787861002" />
+        ixx="302500"
+        ixy="-69.138"
+        ixz="321.56"
+        iyy="355850"
+        iyz="-1374.3"
+        izz="172590" />
     </inertial>
     <visual>
       <origin
@@ -65,14 +65,14 @@
         xyz="-0.3271 0.14034 0.020054"
         rpy="0 0 0" />
       <mass
-        value="0.503853041294886" />
+        value="950.62" />
       <inertia
-        ixx="5.77203859894131E-06"
-        ixy="-6.39490308551869E-10"
-        ixz="-6.55101507497994E-10"
-        iyy="7.74120907350755E-06"
-        iyz="1.14467480632514E-09"
-        izz="5.77288622221224E-06" />
+        ixx="388.87"
+        ixy="-2.1869E-09"
+        ixz="0.001334"
+        iyy="218.49"
+        iyz="-1.5235E-09"
+        izz="218.49" />
     </inertial>
     <visual>
       <origin
@@ -118,14 +118,14 @@
         xyz="-0.3271 0.14034 0.020054"
         rpy="0 0 0" />
       <mass
-        value="0.503852021760132" />
+        value="950.62" />
       <inertia
-        ixx="5.77199099297903E-06"
-        ixy="-6.47832070333766E-10"
-        ixz="-6.39570296767498E-10"
-        iyy="7.74122684098967E-06"
-        iyz="1.13229861557678E-09"
-        izz="5.7728593340892E-06" />
+        ixx="388.87"
+        ixy="-2.1873E-09"
+        ixz="0.001334"
+        iyy="218.49"
+        iyz="-1.5235E-09"
+        izz="218.49" />
     </inertial>
     <visual>
       <origin
@@ -171,14 +171,14 @@
         xyz="-0.3271 0.14034 0.020054"
         rpy="0 0 0" />
       <mass
-        value="0.503853041294886" />
+        value="950.62" />
       <inertia
-        ixx="5.77203859894127E-06"
-        ixy="-6.39490308545873E-10"
-        ixz="6.55101507484353E-10"
-        iyy="7.7412090735075E-06"
-        iyz="-1.14467480634659E-09"
-        izz="5.77288622221223E-06" />
+        ixx="388.87"
+        ixy="-2.1873E-09"
+        ixz="0.001334"
+        iyy="218.49"
+        iyz="-1.5235E-09"
+        izz="218.49" />
     </inertial>
     <visual>
       <origin
@@ -224,14 +224,14 @@
         xyz="-0.3271 0.14034 0.020054"
         rpy="0 0 0" />
       <mass
-        value="0.503852022031433" />
+        value="950.62" />
       <inertia
-        ixx="5.7719914844331E-06"
-        ixy="-6.47591418647473E-10"
-        ixz="6.3996728285628E-10"
-        iyy="7.74122667602425E-06"
-        iyz="-1.13209672720901E-09"
-        izz="5.77285855433357E-06" /> 
+        ixx="388.87"
+        ixy="-2.1869E-09"
+        ixz="0.001334"
+        iyy="218.49"
+        iyz="-1.5235E-09"
+        izz="218.49" />
     </inertial>
     <visual>
       <origin
@@ -277,8 +277,14 @@
         xyz="-0.00098912 -0.21034 -0.0064035"
         rpy="0 0 0" />
       <mass
-        value="0.1" />
-      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+        value="141.89" />
+      <inertia
+        ixx="4.3307"
+        ixy="-0.014198"
+        ixz="-0.1636"
+        iyy="6.8801"
+        iyz="-0.022421"
+        izz="4.3567" />
     </inertial>
     <visual>
       <origin
@@ -317,57 +323,4 @@
     <axis
       xyz="0 0 0" />
   </joint>
-
-  <gazebo reference="left_front_wheel_link0">
-    <collision>
-      <surface>
-        <friction>
-          <ode>
-            <mu>16.0</mu>
-            <mu2>16.0</mu2>
-          </ode>
-        </friction>
-      </surface>
-    </collision>
-  </gazebo>
-
-  <gazebo reference="right_front_wheel_link1">
-    <collision>
-      <surface>
-        <friction>
-          <ode>
-            <mu>16.0</mu>
-            <mu2>16.0</mu2>
-          </ode>
-        </friction>
-      </surface>
-    </collision>
-  </gazebo>
-
-  <gazebo reference="right_rear_wheel_link2">
-    <collision>
-      <surface>
-        <friction>
-          <ode>
-            <mu>16.0</mu>
-            <mu2>16.0</mu2>
-          </ode>
-        </friction>
-      </surface>
-    </collision>
-  </gazebo>
-
-  <gazebo reference="left_rear_wheel_link3">
-    <collision>
-      <surface>
-        <friction>
-          <ode>
-            <mu>16.0</mu>
-            <mu2>16.0</mu2>
-          </ode>
-        </friction>
-      </surface>
-    </collision>
-  </gazebo>
-
 </robot>
