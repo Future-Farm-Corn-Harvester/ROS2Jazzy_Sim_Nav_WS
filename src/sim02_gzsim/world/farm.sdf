@@ -1,0 +1,209 @@
+<sdf version='1.10'>
+  <world name='empty'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/post_office</uri>
+      <name>post_office</name>
+      <pose>2.8483638763427734 41.802299499511719 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/playground</uri>
+      <name>playground</name>
+      <pose>-8.8638925552368164 42.634899139404297 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/bus</uri>
+      <name>bus</name>
+      <pose>-35.913700103759766 43.546699523925781 0 0 0 -1.6986800315605211</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/ambulance</uri>
+      <name>ambulance</name>
+      <pose>-18.928691864013672 42.617683410644531 0 0 0 1.5545299929732848</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/telephone_pole</uri>
+      <name>telephone_pole</name>
+      <pose>-39.313106536865234 30.954399108886719 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/person_walking</uri>
+      <name>person_walking</name>
+      <pose>-4.0411701202392578 40.266632080078125 -2.5013230207232561e-10 2.6222600618318421e-21 2.8295193088702683e-21 -2.193297956440295e-21</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/lamp_post</uri>
+      <name>Lamp Post</name>
+      <pose>22.561691284179688 41.342399597167969 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/fire_hydrant</uri>
+      <name>fire_hydrant</name>
+      <pose>27.567800521850586 41.823455810546875 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/jersey_barrier</uri>
+      <name>jersey_barrier</name>
+      <pose>20.140899658203125 41.305187225341797 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/hatchback</uri>
+      <name>hatchback</name>
+      <pose>-40.069774627685547 39.373477935791016 0.26252299547195435 0 0 1.5594800058862692</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/drc_practice_orange_jersey_barrier</uri>
+      <name>drc_practice_organge_jersey_barrier</name>
+      <pose>23.844638824462891 41.492443084716797 0 0 0 -1.5430899571526955</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/tower_crane</uri>
+      <name>tower_crane</name>
+      <pose>-43.422798156738281 22.932716369628906 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/construction_barrel</uri>
+      <name>Construction Barrel</name>
+      <pose>25.388725329112159 41.432105909930883 0.0044914647111777735 5.7095754132679333e-05 -0.0090850912048262358 0.00018474203706223203</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/collapsed_police_station</uri>
+      <name>collapsed_police_station</name>
+      <pose>-39.218032836914062 3.2535150051116943 0 0 0 1.6380899768109007</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/prius_hybrid</uri>
+      <name>prius_hybrid</name>
+      <pose>-40.482109069824212 34.362209320057296 0.012649222149377675 -1.1986158760071032e-07 2.2201472828274333e-12 -5.2693299038364216e-06</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/robonaut</uri>
+      <name>r2</name>
+      <pose>26.410073388731796 41.377971676674072 0.045679255667568322 -0.0007968783685806224 7.8106977188723669e-07 4.690784260129181e-05</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/water_tower</uri>
+      <name>water_tower</name>
+      <pose>-41.474899291992188 15.283082008361816 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/suv</uri>
+      <name>suv</name>
+      <pose>-41.757198333740234 28.575099945068359 0 0 0 1.5073700296296553</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/fountain</uri>
+      <name>fountain</name>
+      <pose>17.343879699707031 41.542098999023438 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/person_standing</uri>
+      <name>person_standing</name>
+      <pose>-8.5094699859619141 40.597671508789062 -1.8535140400982587e-10 1.4474590139371274e-20 3.8980742684595509e-21 -5.4367064057050129e-21</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/gazebo_models/pickup</uri>
+      <name>pickup</name>
+      <pose>11.364999771118164 41.340305328369141 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/ign_models/Casual female</uri>
+      <name>casual_female</name>
+      <pose>-11.048100471496582 39.829994201660156 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/ign_models/Pine Tree</uri>
+      <name>Pine Tree</name>
+      <pose>15.498230934143066 41.419200897216797 -0.63344299793243408 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/ign_models/Oak tree</uri>
+      <name>Oak tree</name>
+      <pose>-24.980283737182617 42.982498168945312 0 0 0 0</pose>
+    </include>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>

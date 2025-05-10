@@ -14,7 +14,7 @@ def generate_launch_description():
     this_pkg = get_package_share_directory("sim02_gzsim")
     mycar_desc_pkg = get_package_share_directory("sim01_urdf")
     pkg_ros_gz_sim = get_package_share_directory("ros_gz_sim")
-    world_file = os.path.join(this_pkg,"world","house.sdf")
+    world_file = os.path.join(this_pkg,"world","farm.sdf")
 
     gz_sim = IncludeLaunchDescription(
     PythonLaunchDescriptionSource(
