@@ -1,0 +1,5 @@
+<launch>
+    <!-- 打开rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pkg01_model)/rviz/show_mycar.rviz" />
+    <include file="$(find pkg01_model)/launch/state_publisher.launch" />
+</launch>
