@@ -3,8 +3,8 @@
     <!-- 添加传感器插件 -->
     <gazebo>
         <plugin
-        filename="gz-sim-sensors-system"
-        name="gz::sim::systems::Sensors">
+        filename="libignition-gazebo-sensors-system"
+        name="ignition::gazebo::systems::Sensors">
         <render_engine>ogre2</render_engine>
         </plugin>
     </gazebo>
@@ -12,6 +12,7 @@
         <!-- 雷达传感器 -->
     <gazebo reference="laser_link">
         <sensor name='gpu_lidar' type='gpu_lidar'>
+        <pose>0 0 1.0 0 0 0</pose>   <!-- 只给激光传感器加本地偏移：x y z R P Y -->
         <topic>scan</topic>
         <update_rate>30</update_rate> <!-- 激光雷达更新频率 -->
         <lidar>
@@ -35,9 +36,9 @@
             <resolution>0.01</resolution>
             </range>
         </lidar>
-        <always_on>true</always_on>
+        <alwaysOn>1</alwaysOn>
         <visualize>true</visualize> <!-- 激光雷达射线是否可视化 -->
-        <pose relative_to="laser_link"/>
+        <ignition_frame_id>laser_link</ignition_frame_id>
         </sensor>
     </gazebo>
 

@@ -283,7 +283,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="1.5708 0 0" />
       <geometry>
         <mesh
           filename="package://sim01_urdf/meshes/laser_link.STL" />
@@ -294,22 +294,25 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="1.5708 0 0" />
       <geometry>
         <mesh
           filename="package://sim01_urdf/meshes/laser_link.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="laser_joint"
     type="fixed">
+    <!-- <origin
+      xyz="0.005493 -2.8923 3.7226"
+      rpy="1.5718 -0.0036179 2.3184" /> -->
     <origin
       xyz="0.005493 -2.8923 3.7226"
-      rpy="1.5718 -0.0036179 2.3184" />
+      rpy="0 -0.0036179 2.3184" />
     <parent
       link="base_link" />
     <child

@@ -5,10 +5,10 @@
       <real_time_factor>1</real_time_factor>
       <real_time_update_rate>1000</real_time_update_rate>
     </physics>
-    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
-    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
-    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
-    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <plugin name='ignition::gazebo::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='ignition::gazebo::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='ignition::gazebo::systems::Contact' filename='gz-sim-contact-system'/>
     <gravity>0 0 -9.8000000000000007</gravity>
     <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
@@ -171,12 +171,12 @@
       <name>pickup</name>
       <pose>11.364999771118164 41.340305328369141 0 0 0 0</pose>
     </include>
-    <include>
+    <!-- <include>
       <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/ign_models/Casual female</uri>
       <name>casual_female</name>
       <pose>-11.048100471496582 39.829994201660156 0 0 0 0</pose>
-    </include>
-    <include>
+    </include> -->
+    <!-- <include>
       <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/ign_models/Pine Tree</uri>
       <name>Pine Tree</name>
       <pose>15.498230934143066 41.419200897216797 -0.63344299793243408 0 0 0</pose>
@@ -185,7 +185,7 @@
       <uri>file:///home/tungchiahui/UserFolder/MySource/ROS_WS/ign_models/Oak tree</uri>
       <name>Oak tree</name>
       <pose>-24.980283737182617 42.982498168945312 0 0 0 0</pose>
-    </include>
+    </include> -->
     <light name='sun' type='directional'>
       <pose>0 0 10 0 0 0</pose>
       <cast_shadows>true</cast_shadows>

@@ -3,8 +3,8 @@
     <!-- 运动控制插件 -->
     <gazebo>
         <plugin
-            filename="gz-sim-diff-drive-system"
-            name="gz::sim::systems::DiffDrive">
+            filename="libignition-gazebo-diff-drive-system"
+            name="ignition::gazebo::systems::DiffDrive">
             <left_joint>left_front_wheel_joint0</left_joint>
             <left_joint>left_rear_wheel_joint3</left_joint>
             <right_joint>right_front_wheel_joint1</right_joint>
@@ -27,8 +27,8 @@
     </gazebo>
     <!-- 关节状态发布 -->
     <gazebo>
-        <plugin filename="gz-sim-joint-state-publisher-system"
-        name="gz::sim::systems::JointStatePublisher">
+        <plugin filename="ignition-gazebo-joint-state-publisher-system"
+        name="ignition::gazebo::systems::JointStatePublisher">
         </plugin>
     </gazebo>
  

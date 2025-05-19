@@ -64,4 +64,9 @@ def generate_launch_description():
         )
 
 
-    return LaunchDescription([model,start_gazebo_cmd,spawn_entity_cmd,start_robot_state_publisher_cmd,start_rviz_cmd])
+    return LaunchDescription([
+        model,
+        start_gazebo_cmd,
+        spawn_entity_cmd,
+        start_robot_state_publisher_cmd,
+        start_rviz_cmd])
