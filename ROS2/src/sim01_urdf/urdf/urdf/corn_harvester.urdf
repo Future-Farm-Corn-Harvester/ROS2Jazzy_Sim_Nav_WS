@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot
   name="corn_harvester">
+  <link name="base_footprint">
+    <visual>
+      <geometry>
+          <sphere radius="0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="base_mount" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.06"/>
+  </joint>
   <link
     name="base_link">
     <inertial>
@@ -26,9 +38,9 @@
           filename="package://sim01_urdf/meshes/base_link.STL" />
       </geometry>
       <material
-        name="">
+        name="base_color">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.2 0.2 0.2 1" />
       </material>
     </visual>
     <collision>
@@ -66,9 +78,9 @@
           filename="package://sim01_urdf/meshes/left_front_wheel_link0.STL" />
       </geometry>
       <material
-        name="">
+        name="left_wheel_color">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.1 0.1 0.1 1" />
       </material>
     </visual>
     <collision>
@@ -98,13 +110,13 @@
     name="right_front_wheel_link1">
     <inertial>
       <origin
-        xyz="-0.18858 -2.67E-09 -1.5661E-07"
+        xyz="-0.18858 -2.67E-09 -2.5107E-06"
         rpy="0 0 0" />
       <mass
         value="0.98793" />
       <inertia
         ixx="0.0038903"
-        ixy="-8.792E-15"
+        ixy="-8.7921E-15"
         ixz="1.334E-08"
         iyy="0.0023448"
         iyz="-1.4876E-14"
@@ -119,9 +131,9 @@
           filename="package://sim01_urdf/meshes/right_front_wheel_link1.STL" />
       </geometry>
       <material
-        name="">
+        name="right_wheel_color">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.1 0.1 0.1 1" />
       </material>
     </visual>
     <collision>
@@ -139,25 +151,25 @@
     type="continuous">
     <origin
       xyz="0.09 0.3 0.03"
-      rpy="1.5708 0 3.1416" />
+      rpy="-1.1331 0 3.1416" />
     <parent
       link="base_link" />
     <child
       link="right_front_wheel_link1" />
     <axis
-      xyz="-1 0 0" />
+      xyz="1 0 0" />
   </joint>
   <link
     name="right_rear_wheel_link2">
     <inertial>
       <origin
-        xyz="-0.18858 -2.67E-09 -1.5661E-07"
+        xyz="-0.18858 -2.67E-09 -2.5107E-06"
         rpy="0 0 0" />
       <mass
         value="0.98793" />
       <inertia
         ixx="0.0038903"
-        ixy="-8.792E-15"
+        ixy="-8.7919E-15"
         ixz="1.334E-08"
         iyy="0.0023448"
         iyz="-1.4876E-14"
@@ -172,9 +184,9 @@
           filename="package://sim01_urdf/meshes/right_rear_wheel_link2.STL" />
       </geometry>
       <material
-        name="">
+        name="right_wheel_color">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.1 0.1 0.1 1" />
       </material>
     </visual>
     <collision>
@@ -192,13 +204,13 @@
     type="continuous">
     <origin
       xyz="0.09 -0.3 0.03"
-      rpy="1.5708 0 3.1416" />
+      rpy="-1.1331 0 3.1416" />
     <parent
       link="base_link" />
     <child
       link="right_rear_wheel_link2" />
     <axis
-      xyz="-1 0 0" />
+      xyz="1 0 0" />
   </joint>
   <link
     name="left_rear_wheel_link3">
@@ -225,9 +237,9 @@
           filename="package://sim01_urdf/meshes/left_rear_wheel_link3.STL" />
       </geometry>
       <material
-        name="">
+        name="left_wheel_color">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.1 0.1 0.1 1" />
       </material>
     </visual>
     <collision>
@@ -257,30 +269,33 @@
     name="laser_link">
     <inertial>
       <origin
-        xyz="0 0 0"
+        xyz="0.00018031 0.0065305 2.0389E-07"
         rpy="0 0 0" />
       <mass
-        value="0" />
+        value="0.15944" />
       <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
+        ixx="4.828E-05"
+        ixy="3.055E-07"
+        ixz="1.2913E-10"
+        iyy="8.1461E-05"
+        iyz="1.2923E-10"
+        izz="5.1563E-05" />
     </inertial>
     <visual>
+      <!-- <origin
+        xyz="0 0 0"
+        rpy="0 0 0" /> -->
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="-1.5708 0 -1.5708" />
       <geometry>
         <mesh
           filename="package://sim01_urdf/meshes/laser_link.STL" />
       </geometry>
       <material
-        name="">
+        name="laser_glass">
         <color
-          rgba="1 1 1 1" />
+          rgba="0 0 1 0.96" />
       </material>
     </visual>
     <collision>
@@ -296,9 +311,12 @@
   <joint
     name="laser_mount"
     type="fixed">
+    <!-- <origin
+      xyz="0 0.25 0.43"
+      rpy="-1.5708 0 -1.5708" /> -->
     <origin
       xyz="0 0.25 0.43"
-      rpy="-1.5708 0 -1.5708" />
+      rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
