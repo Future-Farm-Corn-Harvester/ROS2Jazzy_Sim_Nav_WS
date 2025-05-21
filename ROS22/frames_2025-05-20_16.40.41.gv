@@ -1,0 +1,14 @@
+digraph G {
+"map" -> "odom"[label=" Broadcaster: default_authority\nAverage rate: 31.008\nBuffer length: 1.419\nMost recent transform: 79.071\nOldest transform: 77.652\n"];
+"base_footprint" -> "base_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"odom" -> "base_footprint"[label=" Broadcaster: default_authority\nAverage rate: 50.704\nBuffer length: 1.42\nMost recent transform: 78.9\nOldest transform: 77.48\n"];
+"base_link" -> "laser_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "left_front_wheel_link0"[label=" Broadcaster: default_authority\nAverage rate: 10.204\nBuffer length: 4.9\nMost recent transform: 1747759240.928351\nOldest transform: 1747759236.028413\n"];
+"base_link" -> "left_rear_wheel_link3"[label=" Broadcaster: default_authority\nAverage rate: 10.204\nBuffer length: 4.9\nMost recent transform: 1747759240.928351\nOldest transform: 1747759236.028413\n"];
+"base_link" -> "right_front_wheel_link1"[label=" Broadcaster: default_authority\nAverage rate: 10.204\nBuffer length: 4.9\nMost recent transform: 1747759240.928351\nOldest transform: 1747759236.028413\n"];
+"base_link" -> "right_rear_wheel_link2"[label=" Broadcaster: default_authority\nAverage rate: 10.204\nBuffer length: 4.9\nMost recent transform: 1747759240.928351\nOldest transform: 1747759236.028413\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1747759241.0182734"[ shape=plaintext ] ;
+}->"map";
+}

@@ -1,0 +1,64 @@
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <!-- 添加雷达等传感器插件 -->
+    <gazebo>
+        <plugin
+        filename="ignition-gazebo-sensors-system"
+        name="ignition::gazebo::systems::Sensors">
+        <render_engine>ogre2</render_engine>
+        </plugin>
+    </gazebo>
+
+    <!-- 雷达传感器 -->
+    <gazebo reference="laser_link">
+        <sensor name='gpu_lidar' type='gpu_lidar'>
+        <pose>0 0 0 0 0 0</pose>   <!-- 只给激光传感器加本地偏移：x y z R P Y -->
+        <topic>scan</topic>
+        <update_rate>30</update_rate> <!-- 激光雷达更新频率 -->
+        <lidar>
+            <scan>
+            <horizontal>
+                <samples>640</samples>
+                <resolution>1</resolution>
+                <min_angle>-3.1415926</min_angle>
+                <max_angle>3.1415926</max_angle>
+            </horizontal>
+            <vertical>
+                <samples>16</samples>
+                <resolution>1</resolution>
+                <min_angle>-0.261799</min_angle>
+                <max_angle>0.261799</max_angle>
+            </vertical>
+            </scan>
+            <range>
+            <min>0.15</min>
+            <max>6.0</max>
+            <resolution>0.01</resolution>
+            </range>
+        </lidar>
+        <alwaysOn>1</alwaysOn>
+        <visualize>true</visualize> <!-- 激光雷达射线是否可视化 -->
+        <ignition_frame_id>laser_link</ignition_frame_id>
+        </sensor>
+    </gazebo>
+
+
+    <!-- 添加IMU传感器插件（和雷达，摄像头等不是一个插件） -->
+    <gazebo>
+        <plugin filename="libignition-gazebo-imu-system.so"
+                name="ignition::gazebo::systems::Imu">
+        </plugin>
+    </gazebo>
+
+    <!-- 陀螺仪 -->
+    <!-- imu坐标系直接用base_link-->
+    <gazebo reference="base_link">
+        <sensor name="imu_sensor" type="imu">
+            <always_on>1</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
+            <topic>imu</topic>
+        </sensor>
+    </gazebo>
+
+</robot>

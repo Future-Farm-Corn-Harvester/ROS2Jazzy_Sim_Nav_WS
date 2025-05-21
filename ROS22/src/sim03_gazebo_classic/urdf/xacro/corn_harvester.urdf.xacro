@@ -1,0 +1,5 @@
+<robot name="corn_harvester" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="$(find sim03_gazebo_classic)/urdf/urdf/corn_harvester.urdf"/>
+    <xacro:include filename="$(find sim03_gazebo_classic)/urdf/xacro/gazebo/move_control.urdf.xacro"/>
+    <xacro:include filename="$(find sim03_gazebo_classic)/urdf/xacro/gazebo/sensors_plugin.urdf.xacro"/>
+</robot>

@@ -1,0 +1,59 @@
+<robot name="my_car_move" xmlns:xacro="http://wiki.ros.org/xacro">
+ 
+    <!-- 传动实现:用于连接控制器与关节 -->
+    <xacro:macro name="joint_trans" params="joint_name">
+        <!-- Transmission is important to link the joints and the controller -->
+        <transmission name="${joint_name}_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${joint_name}">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${joint_name}_motor">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+    </xacro:macro>
+ 
+    <!-- 每一个驱动轮都需要配置传动装置 -->
+    <xacro:joint_trans joint_name="left_front_wheel_joint0" />
+    <xacro:joint_trans joint_name="right_front_wheel_joint1" />
+    <xacro:joint_trans joint_name="left_rear_wheel_joint3" />
+    <xacro:joint_trans joint_name="right_rear_wheel_joint2" />
+ 
+    <!-- 四轮控制器 -->
+    <gazebo>
+        <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+            <updateRate>100.0</updateRate>
+            <robotNamespace>/</robotNamespace>
+            <publishTf>1</publishTf>
+            <leftFrontJoint>left_front_wheel_joint0</leftFrontJoint>     <!-- 左前 -->
+            <rightFrontJoint>right_front_wheel_joint1</rightFrontJoint>  <!-- 右前 -->
+            <leftRearJoint>left_rear_wheel_joint3</leftRearJoint>        <!-- 左后 -->
+            <rightRearJoint>right_rear_wheel_joint2</rightRearJoint>     <!-- 右后 -->
+            <wheelSeparation>4</wheelSeparation>             <!-- 轮距 -->
+            <wheelDiameter>1.4</wheelDiameter>  <!-- 车轮直径 -->
+            <torque>20</torque>
+            <topicName>cmd_vel</topicName>
+            <broadcastTF>true</broadcastTF>  <!-- 里程计相关 -->
+            <commandTopic>cmd_vel</commandTopic> <!-- 运动控制话题 -->
+            <odometryFrame>odom</odometryFrame> 
+            <odometryTopic>odom</odometryTopic> <!-- 里程计话题 -->
+            <robotBaseFrame>base_footprint</robotBaseFrame>
+            <publishOdomTF>true</publishOdomTF> <!-- 里程计相关，odom -->
+            <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+            <!-- <publishWheelTF>true</publishWheelTF> -->
+ 
+            <!-- Set to true to publish transforms for the odometry, defaults to true -->
+            <!-- <publishOdom>true</publishOdom> -->
+            
+ 
+            <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+            <!-- <publishWheelJointState>true</publishWheelJointState> -->
+ 
+            <!-- Set to true to swap right and left wheels, defaults to true -->
+            <!-- <legacyMode>false</legacyMode> -->
+ 
+        </plugin>
+    </gazebo>
+</robot>

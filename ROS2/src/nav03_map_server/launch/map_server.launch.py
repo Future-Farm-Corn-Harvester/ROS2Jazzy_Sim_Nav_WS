@@ -6,7 +6,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
 
   use_sim_time_arg = DeclareLaunchArgument('use_sim_time', default_value = 'true')
-  map_file = os.path.join('map', 'my_map.yaml')
+  map_file = os.path.join('map', 'maze.yaml')
   map_server_node = Node(
       package='nav2_map_server',
       executable='map_server',
